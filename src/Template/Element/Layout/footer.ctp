@@ -1,80 +1,92 @@
-<div class="footer-widgets container">
-    <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3">
-            <div id="text-3" class="widget widget_text">			
-                <div class="textwidget">
-                    <p><img src="<?php echo $BASE_URL;?>/img/logotest.png" alt="<?php echo $settings['web_title'];?>"></p>
-                    <p><?php echo $settings['web_description'];?></p>
-                    <p style="margin-top:25px">
-                        <a class="mks_button mks_button_small squared" href="<?php echo $settings['facebook'];?>" target="_blank" style="color: #FFFFFF; background-color: #0288D1" >Find out more</a>
-                    </p>
-                </div>
-            </div>			
+<footer>
+    <div>
+        <div class="col-md-3 col-xs-12 font-13 col1">
+            <h3 class="font-14"><strong>Chính Sách Bán Hàng</strong></h3>
+            <hr>
+            <ul>
+                <li>
+                    <h4><a rel="nofollow" href="/p/cam-ket-ban-hang">Cam kết bán hàng</a></h4>
+                </li>
+                <li>
+                    <h4><a rel="nofollow" href="/p/huong-dan-mua-hang">Hướng dẫn mua hàng</a></h4>
+                </li>
+                <li>
+                    <h4><a rel="nofollow" href="/p/dieu-khoan-va-dieu-kien">Điều khoản và điều kiện</a></h4>
+                </li>
+                <li>
+                    <h4><a rel="nofollow" href="/p/chinh-sach-van-chuyen">Chính sách vận chuyển</a></h4>
+                </li>
+                <li>
+                    <h4><a rel="nofollow" href="/p/chinh-sach-bao-mat-thong-tin">Chính sách bảo mật thông tin</a></h4>
+                </li>
+            </ul>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3">
-            <div id="herald_posts_widget-10" class="widget herald_posts_widget">
-                <h4 class="widget-title h6"><span>Most Popular</span></h4>
-                <div class="row ">
-                    <?php foreach ($breaking_news as $p): ?>
-                    <article class="herald-lay-g post type-post status-publish format-gallery has-post-thumbnail hentry">
-                        <div class="row">
-                            <div class="col-lg-4 col-xs-3">
-                                <div class="herald-post-thumbnail">
-                                    <a href="<?php echo $BASE_URL;?>/tin-tuc/<?php echo $p['url'];?>" title="<?php echo $p['name'];?>">
-                                        <img width="74" height="55" src="<?php echo $p['image'];?>" class="attachment-herald-lay-g1 size-herald-lay-g1 wp-post-image" alt="" sizes="(max-width: 74px) 100vw, 74px" />			
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-8 col-xs-9 herald-no-pad">
-                                <div class="entry-header">
-                                    <h2 class="entry-title h7">
-                                        <a href="<?php echo $BASE_URL;?>/tin-tuc/<?php echo $p['url'];?>">
-                                            <?php echo $p['name'];?>
-                                        </a>
-                                    </h2>
-                                    <div class="entry-meta meta-small">
-                                        <div class="meta-item herald-views">16,357 Views</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <?php endforeach; ?>
-                </div>
-            </div>			
+        <div class="col-md-3 col-xs-12 font-13 col2">
+            <h3 class="font-14"><strong>Hỗ Trợ Chung</strong></h3>
+            <hr>
+            <ul>
+                <li>
+                    <h4><a rel="nofollow" href="/p/dang-ky-thong-tin-sim">Đăng ký thông tin sim</a></h4>
+                </li>
+                <li>
+                    <h4><a rel="nofollow" href="/p/diem-giao-dich-viettel">Điểm giao dịch Viettel</a></h4>
+                </li>
+                <li>
+                    <h4><a rel="nofollow" href="/p/diem-giao-dich-vinaphone">Điểm giao dịch Vinaphone</a></h4>
+                </li>
+                <li>
+                    <h4><a rel="nofollow" href="/p/diem-giao-dich-mobiphone">Điểm giao dịch Mobiphone</a></h4>
+                </li>
+                <li>
+                    <h4><a rel="nofollow" href="/p/so-tong-dai-cac-mang">Số tổng đài các mạng</a></h4>
+                </li>
+            </ul>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3">
-            <div id="tag_cloud-3" class="widget widget_tag_cloud">
-                <h4 class="widget-title h6"><span>Tags</span></h4>
-                <div class="tagcloud">
-                    <a href="https://demo.mekshq.com/herald/?tag=awesome" class="tag-cloud-link tag-link-55 tag-link-position-1" style="font-size: 13.384615384615pt;" aria-label="awesome (3 items)">awesome</a>
-                </div>
-            </div>			
+        <div class="col-md-3 col-xs-12 font-13 col3">
+            <h3 class="font-14"><strong>Thông Tin - Liên Hệ</strong></h3>
+            <hr>
+            <ul>
+                <li>
+                    <h4><a rel="nofollow" href="/p/gioi-thieu-ve-cong-ty">Giới thiệu về công ty</a></h4>
+                </li>
+                <li>
+                    <h4><a rel="nofollow" href="/p/dia-chi-so-dien-thoai">Địa chỉ - Số điện thoại</a></h4>
+                </li>
+                <li>
+                    <h4><a rel="nofollow" href="/p/huong-dan-thanh-toan">Hướng Dẫn Thanh Toán</a></h4>
+                </li>
+                <li>
+                    <h4><a rel="nofollow" href="/p/chi-duong-den-cua-hang">Chỉ đường đến cửa hàng</a></h4>
+                </li>
+            </ul>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3">
-            <div id="herald_posts_widget-11" class="widget herald_posts_widget">
-                <h4 class="widget-title h6"><span>Most Discussed</span></h4>
-                <div class="row ">
-                    <?php echo $this->element('Layout/footer_facebook'); ?>
-                </div>
-            </div>			
-        </div>
-    </div>
-</div>
-<div class="footer-bottom">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="hel-l herald-go-hor">
-                    <div class="herald-copyright">Copyright &copy; <?php echo date('Y',time());?>. Created by <a href="https://hoanganhonline.com" target="_blank">HoangAnhOnline.Com</a>.</div>
-                </div>
-                <div class="hel-r herald-go-hor">
-                    <ul id="menu-herald-social-2" class="herald-soc-nav">
-                        <?php echo $this->element('Layout/social'); ?>
-                    </ul>							
-                </div>
-            </div>
+        <div class="col-md-3 col4 col-xs-12">
+            <h3 class="font-14"><strong>Dịch Vụ Khác</strong></h3>
+            <hr />
+            <p><a href="http://tongkhosim.com/p/thu-mua-sim" target="_blank">&nbsp; Thu Mua Sim</a></p>
+            <p><a href="http://tongkhosim.com/p/ban-sim-tra-gop" target="_blank">&nbsp; B&aacute;n Sim Trả G&oacute;p</a></p>
+            <p><a href="http://tongkhosim.com/p/cam-co-sim" target="_blank">&nbsp; Cầm Cố Sim</a></p>
+            <p>&nbsp;&nbsp;<a href="http://www.facebook.com/tongkhosimsonglong" target="_blank"><strong>Tongkhosim.com&nbsp;( fanpage)</strong></a></p>
+            <p>&nbsp;</p>
         </div>
     </div>
+    <div class="clearfix"></div>
+    <div style="text-align: center;">&nbsp;</div>
+    <div style="text-align: center;"><span style="font-family:arial,verdana,helvetica,sans-serif; font-size:13px"><strong>C&ocirc;ng Ty TNHH Thương Mại Dịch Vụ Viễn Th&ocirc;ng Song Long</strong></span></div>
+    <div style="font-size: 12.8px; text-align: center;"><strong><span style="font-family:tahoma,sans-serif; font-size:12.8px">Số ĐKKD&nbsp;</span></strong><span style="font-family:arial,verdana,helvetica,sans-serif; font-size:13px"><strong>0313085731</strong></span><strong><span style="font-family:arial,verdana,helvetica,sans-serif; font-size:13px">&nbsp;cấp ng&agrave;y&nbsp;</span></strong><span style="font-family:arial,verdana,helvetica,sans-serif; font-size:13px"><strong>12/01/2015</strong></span><strong><span style="font-family:arial,verdana,helvetica,sans-serif; font-size:13px">&nbsp;do sở kế hoạch v&agrave; đầu tư tp Hồ Ch&iacute; Minh</span></strong></div>
+    <div style="text-align: center;"><strong>Trụ sở ch&iacute;nh: <a href="https://www.google.com/maps/place/Tongkhosim.com+-+C%C3%B4ng+ty+TNHH+TMDV+VT+Song+Long/@10.7891413,106.6445589,14z/data=!4m8!1m2!2m1!1stong+kho+sim!3m4!1s0x31752f225ae8bb8f:0x590c833198d883d4!8m2!3d10.770147!4d106.68451" target="_blank">409 V&otilde; Văn Tần, phường 5, quận 3, Tp.HCM</a></strong></div>
+    <div style="text-align: center;"><strong>Chi nh&aacute;nh H&agrave; Nội: 128 Đốc Ngữ, Ba Đ&igrave;nh, H&agrave; Nội</strong></div>
+    <div style="text-align: center;"><strong>Hotline :&nbsp;0966767676 - 0912767676</strong></div>
+    <div style="text-align: center;"><strong>Email :&nbsp;<a href="mailto:Songlongtongkhosim@gmail.com" target="_blank">Songlongtongkhosim@gmail.com</a></strong></div>
+    <p style="text-align:center"><img alt="" src="<?php echo $BASE_URL; ?>/img/dathongbaobct.png" style="height:48px; width:127px" /></p>
+</footer>
+<br />
+<div class="panel panel-success visible-xs">
+    <div class="panel-heading">
+        <h2 class="panel-title"><i class="glyphicon glyphicon-phone-alt"></i> Giảm giá đặc biệt</h2>
+    </div>
+    <div class="panel-body">
+        <p style="text-align:center"><span style="font-size:14px"><span style="color:rgb(255, 255, 0)"><strong>Giảm gi&aacute; đặc biệt 15%</strong></span></span></p>
+        <p style="text-align: center;"><span style="font-size:12px"><strong>0975.689.986&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,200,000</strong></span></p>
+    </div>
 </div>
-

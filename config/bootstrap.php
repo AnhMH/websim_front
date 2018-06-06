@@ -243,7 +243,7 @@ if ($env == 'production') {
     include_once ('development/bootstrap.php');
 }
 
-define('DEFAULT_SITE_TITLE', 'Con Là Tất Cả');
+define('DEFAULT_SITE_TITLE', 'Web SIM');
 if (!defined('USE_SUB_DIRECTORY')) {
     define('USE_SUB_DIRECTORY', '');
 }

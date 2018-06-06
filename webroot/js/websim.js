@@ -4582,7 +4582,7 @@ $(function() {
             }
         })
     })
-    $("#order").load(thisdomain + '/index.php?ajax=neworder', 2000).delay(3000).fadeIn('show');
+    //$("#order").load(thisdomain + '/index.php?ajax=neworder', 2000).delay(3000).fadeIn('show');
     $(".ajax").click(function() {
         $url = $(this).attr('href')
         loadding();
