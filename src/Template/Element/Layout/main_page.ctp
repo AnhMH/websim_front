@@ -10,7 +10,7 @@
         <br />
         <div class="panel-body" style="padding-bottom: 0; padding-top: 10px;">
             <div class="clearfix"></div>
-            <form id="search" action="index.php" class="form-horizontal">
+            <form id="search" action="<?php echo $BASE_URL;?>" class="form-horizontal">
                 <input name="do" value="search" type="hidden">
                 <div class="form-group">
                     <div class="col-md-4  col-xs-12 col-sm-12 selectnetwork">

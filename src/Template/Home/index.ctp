@@ -1,0 +1,1 @@
+<?php echo $this->element('Layout/main_page'); ?>

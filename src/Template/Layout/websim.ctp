@@ -19,7 +19,7 @@
                         <?php echo $this->element('Layout/left_page'); ?>
                     </div>
                     <div class="col-md-6 main-page">
-                        <?php echo $this->element('Layout/main_page'); ?>
+                        <?php echo $this->fetch('content'); ?>
                     </div>
                     <div class="col-md-3 right-page visible-lg visible-md">
                         <?php echo $this->element('Layout/right_page'); ?>
@@ -93,37 +93,6 @@
                 <?php echo $this->element('Layout/footer'); ?>
             </div>
         </div>
-        <a class="scrollToTop to" href="javascript://"></a>
-        <a class="scrollTobottom to" href="javascript://"></a>
-        <script src="<?php echo $BASE_URL; ?>/js/websim.js?<?php echo time(); ?>" type="text/javascript"></script>
-        <script src="<?php echo $BASE_URL; ?>/js/common.js?<?php echo time(); ?>" type="text/javascript"></script>
-        <div class="navbar-fixed-bottom visible-xs visible-sm" style="zoom: 1; -moz-transform:scale(1);">
-            <p>
-                <span style="font-size:12px">
-                    <strong>
-                        <a href="tel:0947767676">
-                            <span style="color:#FFFF00">Call:&nbsp;</span>
-                        </a>
-                    </strong>
-                </span>
-                <strong>
-                    <a href="tel:0946393939" target="_blank">
-                        <span style="color:#FFFF00">0946.39.39.39</span>
-                    </a>
-                    <span style="color:#FFFF00">&nbsp;-</span>
-                </strong>
-                <span style="color:#FFFF00">
-                    <strong>&nbsp;</strong>
-                </span>
-                <a href="http://tel:0966767676" target="_blank">
-                    <strong><span style="color:#FFFF00">0966.76.76.76</span></strong>
-                </a>
-            </p>
-        </div>
-        <div id="c-mask" class="c-mask"></div>
-        <style>
-            .img-responsive, .thumbnail > img, 
-            .thumbnail a > img {display: inline !important;max-width: 100%;height: auto;}
-        </style>
+        <?php echo $this->element('Layout/bottom');?>
     </body>
 </html>
