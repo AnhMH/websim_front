@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <?php if (!empty($settings['cates'])): ?>
                     <div class="col-md-4  col-xs-12 col-sm-12 selectnetwork">
-                        <select name="network" class="form-control input-sm">
+                        <select name="cate_id" class="form-control input-sm">
                             <option value="0">Chọn mạng di động</option>
                             <?php foreach ($settings['cates'] as $c): ?>
                             <option value="<?php echo $c['id']; ?>"><?php echo $c['name']; ?></option>
@@ -114,15 +114,29 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php if (!empty($data)): ?>
+                    <?php foreach ($data as $k => $val): ?>
                     <tr>
-                        <td class="center ">1</td>
-                        <td><a href="https://tongkhosim.com/0914607791.html" title="0914.60.77.91"><strong class="font-15 sim">0914.60.77.91</strong></a></td>
-                        <td class="font-13 sim-price" style="padding-right: 40px;">200,000</td>
+                        <td class="center "><?php echo $k + 1; ?></td>
+                        <td>
+                            <a href="https://tongkhosim.com/0914607791.html" title="0914.60.77.91">
+                                <strong class="font-15 sim"><?php echo $val['name']; ?></strong>
+                            </a>
+                        </td>
+                        <td class="font-13 sim-price" style="padding-right: 40px;"><?php echo $val['price']; ?></td>
                         <td class="text-center">44</td>
-                        <td  class=" text-center"><span>Vinaphone</span></td>
-                        <td class=" text-center"><a href="https://tongkhosim.com/0914607791.html" class="btn btn-xs btn-success">Đặt Mua</a></td>
-                        <td class="text-center"><a data-toggle="tooltip" title="Thêm 0914.60.77.91 vào giỏ hàng" href="javascript://" class="addcart" data-sim="0914607791" data-gia="0.2"><i class="glyphicon glyphicon-shopping-cart"></i></a></td>
+                        <td  class=" text-center"><span><?php echo $val['cate_name']; ?></span></td>
+                        <td class=" text-center">
+                            <a href="https://tongkhosim.com/0914607791.html" class="btn btn-xs btn-success">Đặt Mua</a>
+                        </td>
+                        <td class="text-center">
+                            <a data-toggle="tooltip" title="Thêm 0914.60.77.91 vào giỏ hàng" href="javascript://" class="addcart" data-sim="0914607791" data-gia="0.2">
+                                <i class="glyphicon glyphicon-shopping-cart"></i>
+                            </a>
+                        </td>
                     </tr>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
                 </tbody>
                 <tfoot>
                     <tr>
