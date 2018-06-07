@@ -1,5 +1,5 @@
 <footer>
-    <div>
+    <div style="float: left; width: 100%;">
         <div class="col-md-3 col-xs-12 font-13 col1">
             <h3 class="font-14"><strong>Chính Sách Bán Hàng</strong></h3>
             <hr>

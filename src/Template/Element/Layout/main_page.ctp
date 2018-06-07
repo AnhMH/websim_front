@@ -13,12 +13,17 @@
             <form id="search" action="<?php echo $BASE_URL;?>" class="form-horizontal">
                 <input name="do" value="search" type="hidden">
                 <div class="form-group">
+                    <?php if (!empty($settings['cates'])): ?>
                     <div class="col-md-4  col-xs-12 col-sm-12 selectnetwork">
                         <select name="network" class="form-control input-sm">
                             <option value="0">Chọn mạng di động</option>
-                            <option value="5">Gmobile</option>
+                            <?php foreach ($settings['cates'] as $c): ?>
+                            <option value="<?php echo $c['id']; ?>"><?php echo $c['name']; ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
+                    <?php endif; ?>
+                    
                     <div class="col-md-4 col-sm-4 col-xs-6 search-hiden">
                         <div class="input-group">
                             <div class="input-group-addon font-12 font-b"> Giá từ:</div>
@@ -57,75 +62,40 @@
             </form>
         </div>
     </div>
+    <?php if (!empty($settings['cates'])): ?>
     <div class="panel panel-success hidden-xs">
         <div class="panel-body">
             <div class="row">
                 <ul id="navigation">
+                    <?php foreach ($settings['cates'] as $c): ?>
                     <li class="top">
-                        <a href="chon-mang/VinaPhone">VinaPhone <span class="caret"></span></a>
+                        <a href="chon-mang/VinaPhone"><?php echo $c['name'];?> <span class="caret"></span></a>
                         <ul>
+                            <?php if (!empty($settings['sub_cates'])): ?>
+                            <?php foreach ($settings['sub_cates'] as $sc): ?>
+                            <?php if ($sc['cate_id'] == $c['id']): ?>
                             <li>
-                                <a href="chon-mang/VinaPhone/dau-so/091">Đầu số 091 <span class="pull-right glyphicon glyphicon-circle-arrow-right"></span></a>
+                                <a href="chon-mang/VinaPhone/dau-so/091"><?php echo $sc['name']; ?> <span class="pull-right glyphicon glyphicon-circle-arrow-right"></span></a>
+                                <?php if (!empty($settings['tags'])): ?>
                                 <ul>
-                                    <li><a href="chon-mang/VinaPhone/dau-so/091/sim-ngay-thang-nam-sinh">Năm sinh dd/mm/YY</a>
+                                    <?php foreach ($settings['tags'] as $t): ?>
+                                    <li><a href="chon-mang/VinaPhone/dau-so/091/sim-ngay-thang-nam-sinh"><?php echo $t['name'];?></a>
+                                    <?php endforeach; ?>
                                 </ul>
+                                <?php endif; ?>
                             </li>
+                            <?php endif; ?>
+                            <?php endforeach; ?>
+                            <?php endif; ?>
+                            
                         </ul>
                     </li>
-                    <li class="top">
-                        <a href="chon-mang/MobiFone">MobiFone <span class="caret"></span></a>
-                        <ul>
-                            <li>
-                                <a href="chon-mang/MobiFone/dau-so/090">Đầu số 090 <span class="pull-right glyphicon glyphicon-circle-arrow-right"></span></a>
-                                <ul>
-                                    <li><a href="chon-mang/MobiFone/dau-so/090/sim-ngay-thang-nam-sinh">Năm sinh dd/mm/YY</a>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="top">
-                        <a href="chon-mang/VietTel">VietTel <span class="caret"></span></a>
-                        <ul>
-                            <li>
-                                <a href="chon-mang/VietTel/dau-so/097">Đầu số 097 <span class="pull-right glyphicon glyphicon-circle-arrow-right"></span></a>
-                                <ul>
-                                    <li><a href="chon-mang/VietTel/dau-so/097/sim-ngay-thang-nam-sinh">Năm sinh dd/mm/YY</a>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="top">
-                        <a href="chon-mang/VietNamobile">VietNamobile <span class="caret"></span></a>
-                        <ul>
-                            <li>
-                                <a href="chon-mang/VietNamobile/dau-so/092">Đầu số 092 <span class="pull-right glyphicon glyphicon-circle-arrow-right"></span></a>
-                                <ul>
-                                    <li><a href="chon-mang/VietNamobile/dau-so/092/sim-ngay-thang-nam-sinh">Năm sinh dd/mm/YY</a>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="top">
-                        <a href="chon-mang/Gmobile">Gmobile <span class="caret"></span></a>
-                        <ul>
-                            <li>
-                                <a href="chon-mang/Gmobile/dau-so/099">Đầu số 099 <span class="pull-right glyphicon glyphicon-circle-arrow-right"></span></a>
-                                <ul>
-                                    <li><a href="chon-mang/Gmobile/dau-so/099/sim-ngay-thang-nam-sinh">Năm sinh dd/mm/YY</a>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="chon-mang/Gmobile/dau-so/0199">Đầu số 0199 <span class="pull-right glyphicon glyphicon-circle-arrow-right"></span></a>
-                                <ul>
-                                    <li><a href="chon-mang/Gmobile/dau-so/0199/sim-ngay-thang-nam-sinh">Năm sinh dd/mm/YY</a>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </div>
     </div>
+    <?php endif; ?>
     <div class="panel panel-success">
         <div class="panel-heading">
             <h1 class="panel-title">SIM SỐ ĐẸP NGẪU NHIÊN <a target="_blank" href="index.php?ajax=home&page=1&print=true" class="pull-right glyphicon glyphicon-print"></a></h1>
