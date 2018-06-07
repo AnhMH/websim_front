@@ -18,24 +18,20 @@
         </div>
     </div>
 </div>
+<?php if (!empty($settings['sub_cates'])): ?>
 <div class="panel panel-success">
     <div class="panel-heading">
         <h2 class="panel-title"> <i class="glyphicon glyphicon-search"></i>tìm sim theo đầu số</h2>
     </div>
     <div class="panel-body">
         <ul class="loaisim">
-            <li> <a href="dau-so/Mobifone-090">Đầu số 090 (Mobifone)</a></li>
-            <li> <a href="dau-so/Vinaphone-091">Đầu số 091 (Vinaphone)</a></li>
-            <li> <a href="dau-so/Vietnamobile-092">Đầu số 092 (Vietnamobile)</a></li>
-            <li> <a href="dau-so/Mobifone-093">Đầu số 093 (Mobifone)</a></li>
-            <li> <a href="dau-so/Vinaphone-094">Đầu số 094 (Vinaphone)</a></li>
-            <li> <a href="dau-so/Viettel-096">Đầu số 096 (Viettel)</a></li>
-            <li> <a href="dau-so/Viettel-097">Đầu số 097 (Viettel)</a></li>
-            <li> <a href="dau-so/Viettel-098">Đầu số 098 (Viettel)</a></li>
-            <li> <a href="dau-so/Gmobile-099">Đầu số 099 (Gmobile)</a></li>
+            <?php foreach ($settings['sub_cates'] as $c): ?>
+            <li> <a href="dau-so/Mobifone-090"><?php echo $c['name'] . ' (' . $c['cate_name'] . ')'; ?></a></li>
+            <?php endforeach; ?>
         </ul>
     </div>
 </div>
+<?php endif; ?>
 <div class="panel panel-success visible-lg visible-md">
     <div class="panel-heading">
         <h2 class="panel-title">    <i class="glyphicon glyphicon-star-empty"></i> Tin tức</h2>
