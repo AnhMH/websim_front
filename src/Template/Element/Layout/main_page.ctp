@@ -61,7 +61,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group text-center search-hiden" >Sim 10 số <input type="radio" value="0" name="type" />Sim 11 số <input type="radio" value="1" name="type" /></div>
+                <div class="form-group text-center search-hiden" >
+                    Sim 10 số <input type="radio" value="10" name="type" />
+                    Sim 11 số <input type="radio" value="11" name="type" />
+                </div>
                 <div class="visible-xs form-group text-right"><a href="#" id="timnangcao" style="margin-right: 20px; font-weight: bold; color: #FFFF00;">Tìm kiếm nâng cao</a></div>
                 <input type="hidden" name="submit" value="true" />
             </form>

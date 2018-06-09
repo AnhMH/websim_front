@@ -21,7 +21,7 @@
                                             <?php foreach ($settings['tags'] as $t): ?>
                                                 <?php if (!empty($t['type']) && $t['type'] == 1): ?>
                                                     <li>
-                                                        <a href="sim-tu-quy/VinaPhone.html" >
+                                                        <a href="<?php echo $BASE_URL . "?cate_id={$c['id']}&tag_id={$t['id']}";?>" >
                                                             <span class="glyphicon glyphicon-arrow-right"></span> <?php echo $t['name']; ?>
                                                         </a>
                                                     </li>
@@ -35,7 +35,7 @@
                                             <?php foreach ($settings['tags'] as $t): ?>
                                                 <?php if (!empty($t['type']) && $t['type'] == 2): ?>
                                                     <li>
-                                                        <a href="sim-tu-quy/VinaPhone.html" >
+                                                        <a href="<?php echo $BASE_URL . "?cate_id={$c['id']}&tag_id={$t['id']}";?>" >
                                                             <span class="glyphicon glyphicon-arrow-right"></span> <?php echo $t['name']; ?>
                                                         </a>
                                                     </li>
@@ -60,7 +60,7 @@
         <ul class="loaisim">
             <?php if (!empty($settings['tags'])): ?>
                 <?php foreach ($settings['tags'] as $t): ?>
-                    <li><a href='sim-tu-quy.html'><?php echo $t['name']; ?></a>
+                    <li><a href='<?php echo $BASE_URL . "?tag_id={$t['id']}";?>'><?php echo $t['name']; ?></a>
                     <?php endforeach; ?>
                 <?php endif; ?>
         </ul>
@@ -85,8 +85,8 @@
             <div class="row form-group" style="font-size: 11px; font-weight: normal;">
                 <div class="col-xs-12 text-center">
                     <label><input name="type" checked="checked" value="0" type="radio"> Tất cả</label> 	
-                    <label><input name="type" value="09" type="radio"> 10 Số</label> 
-                    <label><input name="type" value="01" type="radio"> 11 Số</label>
+                    <label><input name="type" value="10" type="radio"> 10 Số</label> 
+                    <label><input name="type" value="11" type="radio"> 11 Số</label>
                 </div>
                 <div class="col-xs-12 text-center margin-top">
                     <input class="btn btn-success" value="Tìm sim" type="submit">

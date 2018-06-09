@@ -3,7 +3,7 @@
     <div class="panel-body">
         <ul class="loaisim">
             <?php foreach($settings['tags'] as $t): ?>
-            <li><a href='sim-ngay-thang-nam-sinh.html'><?php echo $t['name']; ?></a>
+            <li><a href='<?php echo $BASE_URL . "?tag_id={$t['id']}";?>'><?php echo $t['name']; ?></a>
             <?php endforeach; ?>
         </ul>
     </div>
@@ -21,7 +21,7 @@
         <div class="panel-body" style="padding: 5px;">
             <ul class="list-group">
                 <?php foreach ($settings['cates'] as $c): ?>
-                <a class="list-group-item" href="/chon-mang/VinaPhone"><?php echo $c['name']; ?></a>
+                <a class="list-group-item" href="<?php echo $BASE_URL . "?cate_id={$c['id']}";?>"><?php echo $c['name']; ?></a>
                 <?php endforeach; ?>
         </div>
     </div>
@@ -39,7 +39,7 @@
         <div class="panel-body" style="padding: 5px;">
             <ul class="list-group">
                 <?php foreach ($settings['sub_cates'] as $sc): ?>
-                <a class="list-group-item" href="dau-so/Mobifome-090"> <?php echo $sc['name'] . ' (' . $sc['cate_name'] . ')'; ?></a>
+                <a class="list-group-item" href="<?php echo $BASE_URL . "?cate_id={$sc['cate_id']}&sub_cate={$sc['id']}";?>"> <?php echo $sc['name'] . ' (' . $sc['cate_name'] . ')'; ?></a>
                 <?php endforeach; ?>
             </ul>
         </div>

@@ -26,7 +26,7 @@
     <div class="panel-body">
         <ul class="loaisim">
             <?php foreach ($settings['sub_cates'] as $c): ?>
-            <li> <a href="dau-so/Mobifone-090"><?php echo $c['name'] . ' (' . $c['cate_name'] . ')'; ?></a></li>
+            <li> <a href="<?php echo $BASE_URL . "?cate_id={$c['cate_id']}&sub_cate={$c['id']}";?>"><?php echo $c['name'] . ' (' . $c['cate_name'] . ')'; ?></a></li>
             <?php endforeach; ?>
         </ul>
     </div>
