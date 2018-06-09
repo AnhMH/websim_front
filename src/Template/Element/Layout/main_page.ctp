@@ -18,7 +18,7 @@
                         <select name="cate_id" class="form-control input-sm">
                             <option value="0">Chọn mạng di động</option>
                             <?php foreach ($settings['cates'] as $c): ?>
-                            <option value="<?php echo $c['id']; ?>"><?php echo $c['name']; ?></option>
+                            <option value="<?php echo $c['id']; ?>" <?php echo !empty($param['cate_id']) && $param['cate_id'] == $c['id'] ? " selected='selected'" : "";?>><?php echo $c['name']; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -27,18 +27,23 @@
                     <div class="col-md-4 col-sm-4 col-xs-6 search-hiden">
                         <div class="input-group">
                             <div class="input-group-addon font-12 font-b"> Giá từ:</div>
-                            <input name="giatu" class="form-control input-sm price" placeholder="100,000" />
+                            <input name="price_from" value="<?php echo !empty($param['price_from']) ? $param['price_from'] : ''; ?>" class="form-control input-sm price" placeholder="100,000" />
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-6 search-hiden">
                         <div class="input-group">
                             <div class="input-group-addon font-12 font-b">Đến:</div>
-                            <input name="den" class="form-control input-sm price" placeholder="1,000,000,000" />
+                            <input name="price_to" value="<?php echo !empty($param['price_to']) ? $param['price_to'] : ''; ?>" class="form-control input-sm price" placeholder="1,000,000,000" />
                         </div>
                     </div>
                 </div>
                 <div class="form-group" style="padding:0 35px 0 35px">
-                    <div class="input-group"><input name="sim" id="sim" value="" class="form-control pull-left popover-dismiss" placeholder="Nhập số sim bạn cần tìm" data-container="body" data-toggle="popover" data-placement="bottom" data-content=" - Sử dụng dấu <span class='red'>x</span> đại điện cho 1 số và dấu <span class='red'>*</span> đại điện cho một chuỗi số. <br /> + Để tìm sim bắt đầu bằng 098, quý khách nhập vào 098*<br /> + Để tìm sim kết thúc bằng 888, quý khách nhập vào *888<br /> + Để tìm sim bắt đầu bằng 098 và kết thúc bằng 888, nhập vào 098*888<br /> + Để tìm sim bên trong có số 888, nhập vào 888<br /> + Để tìm sim bắt đầu bằng 098 và kết thúc bằng 808, 818, 828, 838, 848, 858, 868, 878, 888, 898 nhập vào 098*8x8<br /> " title="Hướng dẫn tìm kiếm sim"  /><span class="input-group-btn">  <button class="btn btn-success">TÌM KIẾM</button></span></div>
+                    <div class="input-group">
+                        <input name="sim" id="sim" value="<?php echo !empty($param['sim']) ? $param['sim'] : ''; ?>" class="form-control pull-left popover-dismiss" placeholder="Nhập số sim bạn cần tìm" data-container="body" data-toggle="popover" data-placement="bottom" data-content=" - Sử dụng dấu <span class='red'>x</span> đại điện cho 1 số và dấu <span class='red'>*</span> đại điện cho một chuỗi số. <br /> + Để tìm sim bắt đầu bằng 098, quý khách nhập vào 098*<br /> + Để tìm sim kết thúc bằng 888, quý khách nhập vào *888<br /> + Để tìm sim bắt đầu bằng 098 và kết thúc bằng 888, nhập vào 098*888<br /> + Để tìm sim bên trong có số 888, nhập vào 888<br /> + Để tìm sim bắt đầu bằng 098 và kết thúc bằng 808, 818, 828, 838, 848, 858, 868, 878, 888, 898 nhập vào 098*8x8<br /> " title="Hướng dẫn tìm kiếm sim"  />
+                        <span class="input-group-btn">  
+                            <button class="btn btn-success">TÌM KIẾM</button>
+                        </span>
+                    </div>
                 </div>
                 <div class="form-group text-center"><strong class="red font-12">Hot key:</strong> <span class="hotkey"><a href="09*9999" class="hotkey">09*9999</a>, <a href="*9999" class="hotkey">*9999</a>, <a href="*6868" class="hotkey">*6868</a>, <a href="*1989" class="hotkey">*1989</a>, <a href="09*99x99" class="hotkey">09*99x99</a></span></div>
                 <div class="form-group text-center search-hiden" style="padding: 0px 10px;">Dãy số không gồm:<input name="n[]" value="1" type="checkbox"><span> 1 </span><input name="n[]" value="2" type="checkbox"><span> 2 </span><input name="n[]" value="3" type="checkbox"><span> 3 </span><input name="n[]" value="4" type="checkbox"><span> 4 </span><input name="n[]" value="5" type="checkbox"><span> 5 </span><input name="n[]" value="6" type="checkbox"><span> 6 </span><input name="n[]" value="7" type="checkbox"><span> 7 </span><input name="n[]" value="8" type="checkbox"><span> 8 </span><input name="n[]" value="9" type="checkbox"><span> 9 </span></div>
@@ -69,17 +74,17 @@
                 <ul id="navigation">
                     <?php foreach ($settings['cates'] as $c): ?>
                     <li class="top">
-                        <a href="chon-mang/VinaPhone"><?php echo $c['name'];?> <span class="caret"></span></a>
+                        <a href="<?php echo $BASE_URL;?>?cate_id=<?php echo $c['id']; ?>"><?php echo $c['name'];?> <span class="caret"></span></a>
                         <ul>
                             <?php if (!empty($settings['sub_cates'])): ?>
                             <?php foreach ($settings['sub_cates'] as $sc): ?>
                             <?php if ($sc['cate_id'] == $c['id']): ?>
                             <li>
-                                <a href="chon-mang/VinaPhone/dau-so/091"><?php echo $sc['name']; ?> <span class="pull-right glyphicon glyphicon-circle-arrow-right"></span></a>
+                                <a href="<?php echo $BASE_URL;?>?cate_id=<?php echo $c['id']; ?>&sub_cate=<?php echo $sc['id']; ?>"><?php echo $sc['name']; ?> <span class="pull-right glyphicon glyphicon-circle-arrow-right"></span></a>
                                 <?php if (!empty($settings['tags'])): ?>
                                 <ul>
                                     <?php foreach ($settings['tags'] as $t): ?>
-                                    <li><a href="chon-mang/VinaPhone/dau-so/091/sim-ngay-thang-nam-sinh"><?php echo $t['name'];?></a>
+                                    <li><a href="<?php echo $BASE_URL;?>?cate_id=<?php echo $c['id']; ?>&sub_cate=<?php echo $sc['id']; ?>&tag_id=<?php echo $t['id']; ?>"><?php echo $t['name'];?></a>
                                     <?php endforeach; ?>
                                 </ul>
                                 <?php endif; ?>
@@ -87,7 +92,6 @@
                             <?php endif; ?>
                             <?php endforeach; ?>
                             <?php endif; ?>
-                            
                         </ul>
                     </li>
                     <?php endforeach; ?>
@@ -105,7 +109,7 @@
                 <thead>
                     <tr>
                         <th class="active center ">STT</th>
-                        <th class="active"><input name="simtype" type="radio" value="09" />10 Số <input name="simtype" type="radio" value="01" />11 Số</th>
+                        <th class="active">Số sim</th>
                         <th class="active sortprice">Giá Tiền <span class="glyphicon"> <a class="pricetoogle" href="javascript://"><span class="glyphicon-arrow-up"></span><span class="glyphicon-arrow-down"></span></a></span></th>
                         <th class="active  text-center">Tổng</th>
                         <th class="active  text-center">Mạng</th>
@@ -119,7 +123,7 @@
                     <tr>
                         <td class="center "><?php echo $k + 1; ?></td>
                         <td>
-                            <a href="https://tongkhosim.com/0914607791.html" title="0914.60.77.91">
+                            <a href="<?php echo $BASE_URL;?>/sim/<?php echo $val['id']; ?>" title="<?php echo $val['name']; ?>">
                                 <strong class="font-15 sim"><?php echo $val['name']; ?></strong>
                             </a>
                         </td>
@@ -127,10 +131,10 @@
                         <td class="text-center">44</td>
                         <td  class=" text-center"><span><?php echo $val['cate_name']; ?></span></td>
                         <td class=" text-center">
-                            <a href="https://tongkhosim.com/0914607791.html" class="btn btn-xs btn-success">Đặt Mua</a>
+                            <a href="<?php echo $BASE_URL;?>/sim/<?php echo $val['id']; ?>" class="btn btn-xs btn-success">Đặt Mua</a>
                         </td>
                         <td class="text-center">
-                            <a data-toggle="tooltip" title="Thêm 0914.60.77.91 vào giỏ hàng" href="javascript://" class="addcart" data-sim="0914607791" data-gia="0.2">
+                            <a data-toggle="tooltip" title="Thêm <?php echo $val['name'];?> vào giỏ hàng" href="javascript://" class="addcart" data-sim="<?php echo $val['id']; ?>" data-gia="<?php echo $val['price']; ?>">
                                 <i class="glyphicon glyphicon-shopping-cart"></i>
                             </a>
                         </td>

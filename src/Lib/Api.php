@@ -69,6 +69,9 @@ class Api {
             $posts = array();
             if (!empty($requestData)) {
                 foreach ($requestData as $key => $value) {
+                    if (is_array($value)) {
+                        $value = json_encode($value);
+                    }
                     if (is_scalar($value) || $value instanceof \CurlFile) {
                         $posts[$key] = $value;
                     }
