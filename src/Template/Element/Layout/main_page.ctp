@@ -131,7 +131,7 @@
                             </a>
                         </td>
                         <td class="font-13 sim-price" style="padding-right: 40px;"><?php echo $val['price']; ?></td>
-                        <td class="text-center">44</td>
+                        <td class="text-center"><?php echo $val['sum_num']; ?></td>
                         <td  class=" text-center"><span><?php echo $val['cate_name']; ?></span></td>
                         <td class=" text-center">
                             <a href="<?php echo $BASE_URL;?>/sim/<?php echo $val['id']; ?>" class="btn btn-xs btn-success">Đặt Mua</a>

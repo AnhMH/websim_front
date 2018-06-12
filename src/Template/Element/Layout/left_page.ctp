@@ -112,7 +112,7 @@
             <div class="row form-group">
                 <div class="col-xs-12 text-center">
                     <label> <input name="dtp" checked="checked" value="0" type="radio"> Tất cả</label> 
-                    <label> <input name="dtp" value="2" type="radio"> m/d/y</label> 
+                    <label> <input name="dtp" value="2" type="radio"> d/m/y</label> 
                     <label> <input name="dtp" value="1" type="radio"> 19xx</label>
                 </div>
                 <div class="col-xs-12 text-center margin-top">
