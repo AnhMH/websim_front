@@ -148,21 +148,7 @@
                 <tfoot>
                     <tr>
                         <td colspan="6" class="text-right">
-                            <ul class="pagination pagination-sm pagination-xs">
-                                <li><span class="inactive" href="#">Trước</span></li>
-                                <li class="active"><a title="Go to page 1 of 418" class="current" href="javascript:void(0)">[1]</a> </li>
-                                <li><a class="paginate" title="Go to page 2 of 418" href="/?page=2">2</a></li>
-                                <li><a class="paginate" title="Go to page 3 of 418" href="/?page=3">3</a></li>
-                                <li><a class="paginate" title="Go to page 4 of 418" href="/?page=4">4</a></li>
-                                <li><a class="paginate" title="Go to page 5 of 418" href="/?page=5">5</a></li>
-                                <li><a class="paginate" title="Go to page 6 of 418" href="/?page=6">6</a></li>
-                                <li><a class="paginate" title="Go to page 7 of 418" href="/?page=7">7</a></li>
-                                <li><a class="paginate" title="Go to page 8 of 418" href="/?page=8">8</a></li>
-                                <li><a class="paginate" title="Go to page 9 of 418" href="/?page=9">9</a></li>
-                                ... 
-                                <li><a class="paginate" title="Go to page 418 of 418" href="/?page=418">418</a></li>
-                                <li><a class="paginate" href="/?page=2">Tiếp theo</a></li>
-                            </ul>
+                            <?php echo $this->Paginate->render($total, $param['limit']); ?>
                         </td>
                     </tr>
                 </tfoot>
