@@ -2,14 +2,12 @@
     <div role="navigation" class="navbar-collapse">
         <ul class="nav navbar-nav navbar-left-fix text-left">
             <ul class="nav navbar-nav">
-                <li><a rel="nofollow" href="/">Trang chủ</a></li>
-                <li><a rel="nofollow" href="/p/gioi-thieu">Giới thiệu</a></li>
-                <li><a rel="nofollow" href="/p/thanh-toan">Thanh toán</a></li>
-                <li><a rel="nofollow" href="/p/lien-he">liên hệ</a></li>
-                <li><a href="/p/ban-sim-tra-gop">Bán sim trả góp</a></li>
-                <li><a href="/p/cam-co-sim">Cầm cố sim</a></li>
-                <li><a href="/p/thu-mua-sim">Thu mua sim</a></li>
-                <li><a href="/p/phong-thuy">Xem phong thủy</a></li>
+                <li><a rel="nofollow" href="<?php echo $BASE_URL;?>">Trang chủ</a></li>
+                <?php if (!empty($settings['main_menu'])): ?>
+                <?php foreach ($settings['main_menu'] as $m): ?>
+                <li><a rel="nofollow" href="<?php echo $BASE_URL;?>/danh-muc/<?php echo $m['url'];?>"><?php echo $m['name'];?></a></li>
+                <?php endforeach; ?>
+                <?php endif; ?>
             </ul>
         </ul>
         <form class="navbar-form navbar-right hidden" action="/index.php">

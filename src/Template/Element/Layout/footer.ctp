@@ -1,75 +1,61 @@
 <footer>
+    <?php if (!empty($settings['footer_menu'])): ?>
     <div style="float: left; width: 100%;">
         <div class="col-md-3 col-xs-12 font-13 col1">
             <h3 class="font-14"><strong>Chính Sách Bán Hàng</strong></h3>
             <hr>
             <ul>
+                <?php foreach ($settings['footer_menu'] as $m): ?>
+                <?php if ($m['footer_menu_type'] == 1): ?>
                 <li>
-                    <h4><a rel="nofollow" href="/p/cam-ket-ban-hang">Cam kết bán hàng</a></h4>
+                    <h4><a rel="nofollow" href="<?php echo $BASE_URL;?>/danh-muc/<?php echo $m['url']; ?>"><?php echo $m['name'];?></a></h4>
                 </li>
-                <li>
-                    <h4><a rel="nofollow" href="/p/huong-dan-mua-hang">Hướng dẫn mua hàng</a></h4>
-                </li>
-                <li>
-                    <h4><a rel="nofollow" href="/p/dieu-khoan-va-dieu-kien">Điều khoản và điều kiện</a></h4>
-                </li>
-                <li>
-                    <h4><a rel="nofollow" href="/p/chinh-sach-van-chuyen">Chính sách vận chuyển</a></h4>
-                </li>
-                <li>
-                    <h4><a rel="nofollow" href="/p/chinh-sach-bao-mat-thong-tin">Chính sách bảo mật thông tin</a></h4>
-                </li>
+                <?php endif; ?>
+                <?php endforeach;?>
             </ul>
         </div>
         <div class="col-md-3 col-xs-12 font-13 col2">
             <h3 class="font-14"><strong>Hỗ Trợ Chung</strong></h3>
             <hr>
             <ul>
+                <?php foreach ($settings['footer_menu'] as $m): ?>
+                <?php if ($m['footer_menu_type'] == 2): ?>
                 <li>
-                    <h4><a rel="nofollow" href="/p/dang-ky-thong-tin-sim">Đăng ký thông tin sim</a></h4>
+                    <h4><a rel="nofollow" href="<?php echo $BASE_URL;?>/danh-muc/<?php echo $m['url']; ?>"><?php echo $m['name'];?></a></h4>
                 </li>
-                <li>
-                    <h4><a rel="nofollow" href="/p/diem-giao-dich-viettel">Điểm giao dịch Viettel</a></h4>
-                </li>
-                <li>
-                    <h4><a rel="nofollow" href="/p/diem-giao-dich-vinaphone">Điểm giao dịch Vinaphone</a></h4>
-                </li>
-                <li>
-                    <h4><a rel="nofollow" href="/p/diem-giao-dich-mobiphone">Điểm giao dịch Mobiphone</a></h4>
-                </li>
-                <li>
-                    <h4><a rel="nofollow" href="/p/so-tong-dai-cac-mang">Số tổng đài các mạng</a></h4>
-                </li>
+                <?php endif; ?>
+                <?php endforeach;?>
             </ul>
         </div>
         <div class="col-md-3 col-xs-12 font-13 col3">
             <h3 class="font-14"><strong>Thông Tin - Liên Hệ</strong></h3>
             <hr>
             <ul>
+                <?php foreach ($settings['footer_menu'] as $m): ?>
+                <?php if ($m['footer_menu_type'] == 3): ?>
                 <li>
-                    <h4><a rel="nofollow" href="/p/gioi-thieu-ve-cong-ty">Giới thiệu về công ty</a></h4>
+                    <h4><a rel="nofollow" href="<?php echo $BASE_URL;?>/danh-muc/<?php echo $m['url']; ?>"><?php echo $m['name'];?></a></h4>
                 </li>
-                <li>
-                    <h4><a rel="nofollow" href="/p/dia-chi-so-dien-thoai">Địa chỉ - Số điện thoại</a></h4>
-                </li>
-                <li>
-                    <h4><a rel="nofollow" href="/p/huong-dan-thanh-toan">Hướng Dẫn Thanh Toán</a></h4>
-                </li>
-                <li>
-                    <h4><a rel="nofollow" href="/p/chi-duong-den-cua-hang">Chỉ đường đến cửa hàng</a></h4>
-                </li>
+                <?php endif; ?>
+                <?php endforeach;?>
             </ul>
         </div>
         <div class="col-md-3 col4 col-xs-12">
             <h3 class="font-14"><strong>Dịch Vụ Khác</strong></h3>
             <hr />
-            <p><a href="http://tongkhosim.com/p/thu-mua-sim" target="_blank">&nbsp; Thu Mua Sim</a></p>
-            <p><a href="http://tongkhosim.com/p/ban-sim-tra-gop" target="_blank">&nbsp; B&aacute;n Sim Trả G&oacute;p</a></p>
-            <p><a href="http://tongkhosim.com/p/cam-co-sim" target="_blank">&nbsp; Cầm Cố Sim</a></p>
-            <p>&nbsp;&nbsp;<a href="http://www.facebook.com/tongkhosimsonglong" target="_blank"><strong>Tongkhosim.com&nbsp;( fanpage)</strong></a></p>
-            <p>&nbsp;</p>
+            <ul>
+                <?php foreach ($settings['footer_menu'] as $m): ?>
+                <?php if ($m['footer_menu_type'] == 4): ?>
+                <li>
+                    <h4><a rel="nofollow" href="<?php echo $BASE_URL;?>/danh-muc/<?php echo $m['url']; ?>"><?php echo $m['name'];?></a></h4>
+                </li>
+                <?php endif; ?>
+                <?php endforeach;?>
+            </ul>
         </div>
     </div>
+    <?php endif; ?>
+    
     <div class="clearfix"></div>
     <div style="text-align: center;">&nbsp;</div>
     <div style="text-align: center;"><span style="font-family:arial,verdana,helvetica,sans-serif; font-size:13px"><strong>C&ocirc;ng Ty TNHH Thương Mại Dịch Vụ Viễn Th&ocirc;ng Song Long</strong></span></div>
