@@ -32,14 +32,17 @@
     </div>
 </div>
 <?php endif; ?>
+<?php if (!empty($settings['news'])): ?>
 <div class="panel panel-success visible-lg visible-md">
     <div class="panel-heading">
-        <h2 class="panel-title">    <i class="glyphicon glyphicon-star-empty"></i> Tin tức</h2>
+        <h2 class="panel-title"><i class="glyphicon glyphicon-star-empty"></i> Tin tức</h2>
     </div>
     <div class="panel-body" style="max-height: 480px; overflow: auto;">
         <ul class="new">
-            <li><a  href="/p/ke-hoach-chuyen-doi-sim-11-so-sang-sim-10-so">Kế hoạch chuyển đổi sim 11 số sang sim 10 số</a></li>
-            <li><a  href="/p/cac-loai-sim-so-dep-dang-duoc-ua-chuong-va-tim-kiem-nhieu-nhat-hien-nay">Các loại sim số đẹp đang được ưa chuộng và tìm kiếm nhiều nhất hiện nay</a></li>
+            <?php foreach ($settings['news'] as $n): ?>
+            <li><a  href="<?php echo $BASE_URL."/tin-tuc/{$n['url']}";?>"><?php echo $n['name'];?></a></li>
+            <?php endforeach; ?>
         </ul>
     </div>
 </div>
+<?php endif; ?>

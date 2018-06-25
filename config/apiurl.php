@@ -14,3 +14,5 @@ Configure::write('API.url_settings_general', 'settings/general');
 Configure::write('API.url_products_list', 'products/list');
 
 Configure::write('API.url_pages_detail', 'pages/detail');
+
+Configure::write('API.url_news_detail', 'news/detail');
