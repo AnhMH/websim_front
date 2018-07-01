@@ -6,28 +6,21 @@
 
 namespace App\Controller;
 
+use App\Lib\Api;
+use Cake\Core\Configure;
+
 class ProductsController extends AppController {
     /**
      * List products
      */
-    public function index() {
-        $data = array(
-            array(
-                'image_path' => $this->BASE_URL . '/img/slider1.jpg',
-                'title' => 'Ban trang diem',
-                'description' => 'The atmosphere in New York is lorem ipsum.'
-            ),
-            array(
-                'image_path' => $this->BASE_URL . '/img/slider1.jpg',
-                'title' => 'Tu trang diem',
-                'description' => 'The atmosphere in New York is lorem ipsum.'
-            ),
-            array(
-                'image_path' => $this->BASE_URL . '/img/slider1.jpg',
-                'title' => 'Guong trang diem',
-                'description' => 'The atmosphere in New York is lorem ipsum.'
-            ),
+    public function index($id = '') {
+        $param = array(
+            'id' => $id
         );
-        $this->set('data', $data);
+        $data = Api::call(Configure::read('API.url_products_detail'), $param);
+        $this->set('pagedata', $data);
+        if (!empty($data['name'])) {
+            $this->set('pageTitle', $data['name']);
+        }
     }
 }

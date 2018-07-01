@@ -56,6 +56,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->connect('/tin-tuc/*', ['controller' => 'Articles', 'action' => 'index']);
     $routes->connect('/danh-muc/*', ['controller' => 'Pages', 'action' => 'index']);
+    $routes->connect('/sim/*', ['controller' => 'Products', 'action' => 'index']);
 
     /**
      * Connect catchall routes for all controllers.

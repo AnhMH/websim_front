@@ -130,7 +130,7 @@
                                 <strong class="font-15 sim"><?php echo $val['name']; ?></strong>
                             </a>
                         </td>
-                        <td class="font-13 sim-price" style="padding-right: 40px;"><?php echo $val['price']; ?></td>
+                        <td class="font-13 sim-price" style="padding-right: 40px;"><?php echo number_format($val['price']); ?></td>
                         <td class="text-center"><?php echo $val['sum_num']; ?></td>
                         <td  class=" text-center"><span><?php echo $val['cate_name']; ?></span></td>
                         <td class=" text-center">
