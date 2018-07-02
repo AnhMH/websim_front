@@ -151,7 +151,11 @@ class AppController extends Controller
      */
     public function getGeneralData() {
         $data = array();
-        $data = Api::call(Configure::read('API.url_settings_general'), array());
+        $param = array();
+        if ($this->controller == 'products' && $this->action == 'index') {
+            $param['get_address'] = 1;
+        }
+        $data = Api::call(Configure::read('API.url_settings_general'), $param);
         return $data;
     }
     

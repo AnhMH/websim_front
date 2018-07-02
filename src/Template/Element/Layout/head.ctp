@@ -8,3 +8,6 @@
 <link href="<?php echo $BASE_URL; ?>/css/style.css?<?php echo time(); ?>" rel="stylesheet">
 <meta property="og:site_name" content="<?php echo $BASE_URL;?>">
 <meta property="og:image" content="">
+<script type="text/javascript">
+    var BASE_URL = '<?php echo $BASE_URL;?>';
+</script>

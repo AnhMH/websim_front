@@ -70,4 +70,55 @@ $(document).ready(function() {
         $("meta[name='viewport']").attr('content', 'width=1024');
         $(".mobi").hide();
     }
+    
+    select_address();
 });
+
+function select_address() {
+    var cityInput = $('#city');
+    var cityWrapper = $('.form-city');
+    var districtInput = $('#district');
+    var districtWrapper = $('.form-district');
+    var wardWrapper = $('.form-ward');
+    
+    cityInput.unbind('change').bind('change', function(){
+        var value = $('#city option:selected').attr('data-code');
+        districtWrapper.remove();
+        wardWrapper.remove();
+        if (value != 0) {
+            $.ajax({
+                type: "POST",
+                url: BASE_URL + '/ajax/getaddress',
+                data: {
+                    type: 'district',
+                    province_code: value,
+                    title: 'Quận/Huyện'
+                },
+                success: function (response) {
+                    cityWrapper.after(response);
+                    select_address();
+                }
+            });
+        }
+    });
+    
+    districtInput.unbind('change').bind('change', function(){
+        var value = $('#district option:selected').attr('data-code');
+        wardWrapper.remove();
+        if (value != 0) {
+            $.ajax({
+                type: "POST",
+                url: BASE_URL + '/ajax/getaddress',
+                data: {
+                    type: 'ward',
+                    district_code: value,
+                    title: 'Phường/Xã'
+                },
+                success: function (response) {
+                    districtWrapper.after(response);
+                    select_address();
+                }
+            });
+        }
+    });
+}
