@@ -4,7 +4,7 @@
             <h1 class="panel-title">Đặt mua sim <?php echo $pagedata['name']; ?> giá gốc rẻ nhất thị trường</h1>
         </div>
         <div class="panel-body">
-            <form class="form-horizontal" method="POST" id="ordered" action="<?php echo $BASE_URL . '/sim/' . $pagedata['id']; ?>" onsubmit="return checkorder()">
+            <form class="form-horizontal" method="POST" id="ordered" action="<?php echo $BASE_URL . '/orders/complete'; ?>" onsubmit="return checkorder()">
                 <table class="table table-hover table-condensed table-bordered">
                     <thead>
                         <tr>
@@ -17,6 +17,7 @@
                         <tr>
                             <td class="text-center"> 1</td>
                             <td style="vertical-align: baseline;">
+                                <input type="hidden" name="sim[<?php echo $pagedata['name'];?>]" value="<?php echo $pagedata['price'];?>"/>
                                 <div>Số sim: <strong style="font-size: 22px; color: gold;"><?php echo $pagedata['name']; ?></strong> </div>
                                 <div>Giá bán: <strong style="font-size: 17px; color: gold;"><?php echo number_format($pagedata['price']); ?></strong> <sup>vnđ</sup> </div>
                                 <!--<div>( một trăm triệu đồng )</div>-->

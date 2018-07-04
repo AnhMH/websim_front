@@ -4457,25 +4457,33 @@ function checkorder() {
     $(".error").remove();
     fullname = $("input[name='fullname']");
     phone = $("input[name='phone']");
-    city = $("input[name='city']");
-    qh = $("input[name='qh']");
-    px = $("input[name='px']");
+    city = $("#city");
+    district = $("#district");
+    ward = $("#ward");
     address = $("textarea[name='address']");
     if (fullname.val() == '') {
-        fullname.focus().after('<span class="error">Báº¡n chÆ°a nháº­p há» vÃ  tÃªn!</span>');
+        fullname.focus().after('<span class="error">Bạn chưa nhập họ và tên!</span>');
         return false;
     }
     if (phone.val() == '') {
-        phone.focus().after('<span class="error">Báº¡n chÆ°a nháº­p Ä‘iá»‡n thoáº¡i!</span>');
+        phone.focus().after('<span class="error">Bạn chưa nhập số điện thoại!</span>');
         return false;
     }
     if (address.val() == '') {
-        address.focus().after('<span class="error">Báº¡n chÆ°a nháº­p Ä‘á»‹a chá»‰!</span>')
+        address.focus().after('<span class="error">Bạn chưa nhập địa chỉ!</span>')
         return false;
     }
     if (/Mobi/.test(navigator.userAgent)) {} else {
-        if (city.val() == '') {
-            city.focus().after('<span class="error">Báº¡n chÆ°a chá»n tá»‰nh thÃ nh!</span>');
+        if (city.val() == 'undefined' || city.val() == '0') {
+            city.focus().after('<span class="error">Bạn chưa chọn tỉnh/thành phố!</span>');
+            return false;
+        }
+        if (district.val() == 'undefined' || district.val() == '0') {
+            district.focus().after('<span class="error">Bạn chưa chọn quận/huyện!</span>');
+            return false;
+        }
+        if (ward.val() == 'undefined' || ward.val() == '0') {
+            ward.focus().after('<span class="error">Bạn chưa chọn phường/xã!</span>');
             return false;
         }
     }
