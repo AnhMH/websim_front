@@ -18,3 +18,5 @@ Configure::write('API.url_products_detail', 'products/detail');
 Configure::write('API.url_pages_detail', 'pages/detail');
 
 Configure::write('API.url_news_detail', 'news/detail');
+
+Configure::write('API.url_orders_addupdate', 'orders/addupdate');
