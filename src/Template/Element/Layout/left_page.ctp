@@ -123,7 +123,7 @@
         </form>
     </div>
 </div>
-<div class="panel panel-success visible-lg visible-md">
+<!--<div class="panel panel-success visible-lg visible-md">
     <div class="panel-heading">
         <h6 class="panel-title"> <i class="glyphicon glyphicon-shopping-cart"></i> ĐƠN ĐẶT HÀNG</h6>
     </div>
@@ -144,4 +144,4 @@
     <div class="panel-body mp0">
         <p style="text-align: center;"><strong><?php echo $BASE_URL; ?></strong></p>
     </div>
-</div>
+</div>-->

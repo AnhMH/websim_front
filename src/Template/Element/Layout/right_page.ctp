@@ -7,7 +7,7 @@
         <p style="text-align:center"><span style="font-size:12px"><strong>(l&atilde;i suất cực thấp)</strong></span></p>
     </div>
 </div>
-<div class="panel panel-success visible-lg visible-md">
+<!--<div class="panel panel-success visible-lg visible-md">
     <div class="panel-heading">
         <h2 class="panel-title"><i class="glyphicon glyphicon-star-empty"></i> Giảm giá đặc biệt</h2>
     </div>
@@ -17,7 +17,7 @@
             <p style="text-align:center"><span style="font-size:12px"><strong>0975.689.986&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,200,000</strong></span></p>
         </div>
     </div>
-</div>
+</div>-->
 <?php if (!empty($settings['sub_cates'])): ?>
 <div class="panel panel-success">
     <div class="panel-heading">

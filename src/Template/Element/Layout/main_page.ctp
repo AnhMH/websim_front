@@ -105,7 +105,7 @@
     <?php endif; ?>
     <div class="panel panel-success">
         <div class="panel-heading">
-            <h1 class="panel-title">SIM SỐ ĐẸP NGẪU NHIÊN <a target="_blank" href="index.php?ajax=home&page=1&print=true" class="pull-right glyphicon glyphicon-print"></a></h1>
+            <h1 class="panel-title">SIM SỐ ĐẸP NGẪU NHIÊN</h1>
         </div>
         <div class="panel-body mp0">
             <table class="table table-bordered table-striped">
@@ -117,7 +117,6 @@
                         <th class="active  text-center">Tổng</th>
                         <th class="active  text-center">Mạng</th>
                         <th class="active  text-center">Đặt Mua</th>
-                        <th class="active  text-center"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -136,11 +135,6 @@
                         <td class=" text-center">
                             <a href="<?php echo $BASE_URL;?>/sim/<?php echo $val['id']; ?>" class="btn btn-xs btn-success">Đặt Mua</a>
                         </td>
-                        <td class="text-center">
-                            <a data-toggle="tooltip" title="Thêm <?php echo $val['name'];?> vào giỏ hàng" href="javascript://" class="addcart" data-sim="<?php echo $val['id']; ?>" data-gia="<?php echo $val['price']; ?>">
-                                <i class="glyphicon glyphicon-shopping-cart"></i>
-                            </a>
-                        </td>
                     </tr>
                     <?php endforeach; ?>
                     <?php endif; ?>
@@ -156,7 +150,7 @@
             <div style="padding: 10px;">
                 <div style="max-height: 700px; overflow-x: auto;">
                     <p style="text-align:justify"><span style="color:#FFFF00">1&nbsp; Quan niệm chung về Sim số đẹp</span></p>
-                    <p style="text-align:center"><span style="color:#FFFF00">-----</span><a href="https://tongkhosim.com/"><span style="color:#FFFF00">https://tongkhosim.com</span></a><span style="color:#FFFF00">-----</span></p>
+                    <p style="text-align:center"><span style="color:#FFFF00">-----</span><a href="<?php echo $BASE_URL;?>"><span style="color:#FFFF00"><?php echo $BASE_URL;?></span></a><span style="color:#FFFF00">-----</span></p>
                 </div>
             </div>
         </div>
