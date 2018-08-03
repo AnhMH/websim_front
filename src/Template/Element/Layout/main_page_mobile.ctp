@@ -60,8 +60,22 @@
     </div>
     <div class="panel-body">
         <div class="ui-tabs-panel ui-widget-content ui-corner-bottom">
-            <p style="text-align:center"><span style="font-size:16px"><strong>Hotline b&aacute;n h&agrave;ng</strong></span></p>
-            <p style="text-align:center">&nbsp;</p>
+            <p style="text-align:center"><strong>Hotline bán hàng</strong></p>
+        <?php if (!empty($settings['hotlines'])): ?>
+        <?php foreach ($settings['hotlines'] as $h): ?>
+        <p style="text-align:center"><strong><?php echo $h['name']; ?></strong></p>
+            <?php foreach ($h['phone_number'] as $k => $p): ?>
+            <p style="text-align:center">
+                <span style="font-size:14px">
+                    <a href="tel:<?php echo $k;?>" target="_blank">
+                        <span style="color:rgb(255, 255, 0)"><strong><?php echo $p;?></strong></span>
+                    </a>
+                </span>
+            </p>
+            <?php endforeach; ?>
+        
+        <?php endforeach; ?>
+        <?php endif; ?>
         </div>
     </div>
 </div>

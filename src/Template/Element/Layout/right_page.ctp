@@ -3,7 +3,7 @@
         <h2 class="panel-title"><i class="glyphicon glyphicon-phone-alt"></i> Hotline</h2>
     </div>
     <div class="panel-body">
-        <p style="text-align:center"><strong>Hotline b&aacute;n h&agrave;ng</strong></p>
+        <p style="text-align:center"><strong>Hotline bán hàng</strong></p>
         <?php if (!empty($settings['hotlines'])): ?>
         <?php foreach ($settings['hotlines'] as $h): ?>
         <p style="text-align:center"><strong><?php echo $h['name']; ?></strong></p>

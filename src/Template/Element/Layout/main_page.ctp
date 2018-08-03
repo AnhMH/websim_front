@@ -149,8 +149,7 @@
             </table>
             <div style="padding: 10px;">
                 <div style="max-height: 700px; overflow-x: auto;">
-                    <p style="text-align:justify"><span style="color:#FFFF00">1&nbsp; Quan niệm chung về Sim số đẹp</span></p>
-                    <p style="text-align:center"><span style="color:#FFFF00">-----</span><a href="<?php echo $BASE_URL;?>"><span style="color:#FFFF00"><?php echo $BASE_URL;?></span></a><span style="color:#FFFF00">-----</span></p>
+                    <?php echo $settings['admin']['homepage_block'];?>
                 </div>
             </div>
         </div>

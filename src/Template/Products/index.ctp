@@ -80,6 +80,8 @@
         <div class="panel-heading">
             <h4></h4>
         </div>
-        <div class="panel-body"></div>
+        <div class="panel-body">
+            <?php echo $settings['admin']['product_block']; ?>
+        </div>
     </div>
 </div>

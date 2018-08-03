@@ -6540,7 +6540,7 @@ ul#navigation li a{
     border-radius: 4px 4px 0px 0px;
     font-weight: bold;
     padding-left: 15px;
-     max-width: 230px;
+     /*max-width: 230px;*/
     margin: 1px;
     padding: 8px 8px;
 }

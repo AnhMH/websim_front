@@ -8,7 +8,9 @@
             <?php echo $this->element('Layout/navbar_top'); ?>
             <div class="container">
                 <div class="header">
-                    <img src="<?php echo $BASE_URL; ?>/img/banner.png" alt="tổng kho sim" />
+                    <?php if (!empty($settings['admin']['web_banner'])):?>
+                    <img src="<?php echo $settings['admin']['web_banner']; ?>" alt="banner" />
+                    <?php endif;?>
                 </div>
                 <?php echo $this->element('Layout/navbar_main'); ?>
                 <div class="row">

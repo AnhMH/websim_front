@@ -8,10 +8,10 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="menutop">
-                <a rel="dofollow"  href="/">
+                <a rel="dofollow"  href="<?php echo $BASE_URL;?>">
                     <span class="stv-home"></span>Trang chủ</a>
-                <a rel="nofollow"  href="/p/thanh-toan"><span class="stv-credit-card"></span> Thanh toán</a>
-                <a rel="nofollow"  href="/p/lien-he"><span class="stv-envelop"></span> Liên hệ</a>
+                <a rel="nofollow"  href="<?php echo $BASE_URL;?>/danh-muc/thanh-toan"><span class="stv-credit-card"></span> Thanh toán</a>
+                <a rel="nofollow"  href="<?php echo $BASE_URL;?>/danh-muc/lien-he"><span class="stv-envelop"></span> Liên hệ</a>
             </div>
             <style>
                 .menutop{text-align: right;float: left;}
